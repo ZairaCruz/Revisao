@@ -1,0 +1,27 @@
+package com.laboratorio;
+
+import java.io.Serializable;
+
+import javax.faces.bean.ManagedBean;
+
+@ManagedBean (name="bean")
+public class AppGameBean implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	private boolean primeira;
+	private boolean segunda;
+	
+	public boolean isPrimeira() {
+		return primeira;
+	}
+	public void setPrimeira(boolean primeira) {
+		this.primeira = primeira;
+	}
+	public boolean isSegunda() {
+		return segunda;
+	}
+	public void setSegunda(boolean segunda) {
+		this.segunda = segunda;
+	}
+	
+}

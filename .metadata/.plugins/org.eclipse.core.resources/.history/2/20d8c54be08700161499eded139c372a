@@ -1,0 +1,48 @@
+package com.laboratorio;
+
+import java.io.Serializable;
+
+import javax.faces.bean.ManagedBean;
+
+@ManagedBean (name="bean")
+public class AppGameBean implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	private boolean primeira;
+	private boolean segunda;
+	private boolean terceira;
+	private boolean quarta;
+	private boolean quinta;
+	
+	public boolean isTerceira() {
+		return terceira;
+	}
+	public void setTerceira(boolean terceira) {
+		this.terceira = terceira;
+	}
+	public boolean isQuarta() {
+		return quarta;
+	}
+	public void setQuarta(boolean quarta) {
+		this.quarta = quarta;
+	}
+	public boolean isQuinta() {
+		return quinta;
+	}
+	public void setQuinta(boolean quinta) {
+		this.quinta = quinta;
+	}
+	public boolean isPrimeira() {
+		return primeira;
+	}
+	public void setPrimeira(boolean primeira) {
+		this.primeira = primeira;
+	}
+	public boolean isSegunda() {
+		return segunda;
+	}
+	public void setSegunda(boolean segunda) {
+		this.segunda = segunda;
+	}
+	
+}

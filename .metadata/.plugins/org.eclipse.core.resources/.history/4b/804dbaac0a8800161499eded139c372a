@@ -1,0 +1,132 @@
+package com.laboratorio;
+
+import java.io.Serializable;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+import javax.faces.bean.ManagedBean;
+
+@ManagedBean (name="bean")
+public class ImcBean implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	private String nome;
+	private Float peso;
+	private Float altura;
+	private String escolhaSexo;
+	private String condicao;
+	private Float imc;
+	
+	public enum Sexo{Masculino, Feminino};
+	private Sexo sexo = Sexo.Masculino;
+	
+	public static void setTipoItens(Map<String, Sexo> itens){
+		ImcBean.itens = itens;
+	}
+	public Map<String, Sexo> getItens(){
+		return itens;
+	}
+	private static Map<String, Sexo> itens;
+		static{
+		itens = new LinkedHashMap<String, Sexo>();
+		itens.put("Masculino", Sexo.Masculino);
+		itens.put("Feminino", Sexo.Feminino);
+	}
+		public String getNome() {
+			return nome;
+		}
+		public void setNome(String nome) {
+			this.nome = nome;
+		}
+		public Float getPeso() {
+			return peso;
+		}
+		public void setPeso(Float peso) {
+			this.peso = peso;
+		}
+		public Float getAltura() {
+			return altura;
+		}
+		public void setAltura(Float altura) {
+			this.altura = altura;
+		}
+		public Sexo getSexo() {
+			return sexo;
+		}
+		public void setSexo(Sexo sexo) {
+			this.sexo = sexo;
+		}
+		public static void setItens(Map<String, Sexo> itens) {
+			ImcBean.itens = itens;
+		};
+		public String getEscolhaSexo() {
+			return escolhaSexo;
+		}
+		public void setEscolhaSexo(String escolhaSexo) {
+			this.escolhaSexo = escolhaSexo;
+		}
+		public String getCondicao() {
+			return condicao;
+		}
+		public void setCondicao(String condicao) {
+			this.condicao = condicao;
+		}
+		public Float getImc() {
+			return imc;
+		}
+		public void setImc(Float imc) {
+			this.imc = imc;
+		}
+		
+		public String calcularImc(){
+			escolhaSexo = sexo.name();
+			Float quadAlt;
+			quadAlt = (float)altura * (float)altura;
+			imc = peso / quadAlt;
+			if(sexo == Sexo.Feminino){
+				if(imc < 19.1){
+					condicao = "Abaixo do peso";
+				}else{
+					if(imc >= 19.1 || imc < 25.8){
+						condicao = "Peso normal";
+					}else{
+						if(imc >= 25.8 || imc < 27.3){
+							condicao = "Acima do peso";
+						}else{
+							if(imc >= 27.3 || imc < 32.3){
+								condicao = "Acima do peso ideal";
+							}else{
+								condicao = "Obesa";
+							}
+						}
+					}
+				}
+			}
+			if(sexo == Sexo.Masculino){
+				if(imc < 20.7){
+					condicao = "Abaixo do peso";
+				}else{
+					if(imc >= 20.7 || imc < 26.4){
+						condicao = "Peso normal";
+					}else{
+						if(imc >= 26.4 || imc < 27.8){
+							condicao = "Acima do peso";
+						}else{
+							if(imc >= 27.8 || imc < 31.1){
+								condicao = "Acima do peso ideal";
+							}else{
+								condicao = "Obesa";
+							}
+						}
+					}
+				}
+			}
+			return "resultado";
+		}
+		
+		
+		
+	
+	
+	 
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>AppCalculoCombustível</title>
+</h:head>
+
+<h:body>
+	<div align="left">
+		<h:form>
+		<fieldset>
+			<h:panelGrid columns="4">
+			<br></br>
+			<br></br>
+			
+				<h:selectOneRadio value="#{bean.combustivel}">
+					<f:selectItems value="#{bean.tipoItens}"/>
+				</h:selectOneRadio>
+			</h:panelGrid>
+			<h:panelGrid columns="3">
+				<h:outputLabel value="Litros"/>
+				<h:inputText size="5" value="#{bean.litros}">
+					<f:convertNumber  minFractionDigits="0" />
+				</h:inputText>
+				<h:commandButton value="Calcular" action="#{bean.calcular}"/>
+				<br></br>
+		
+				
+			</h:panelGrid>
+		</fieldset>
+
+		<fieldset>
+			<h2>Total</h2>
+			<h:panelGrid columns="2">
+			
+				<h:outputLabel value="Combustível:"/>
+				<h:inputText size="8" value="#{bean.nomeCombustivel}"/>
+				
+				<h:outputLabel value="Valor litro:"/>
+				<h:inputText size="8" value="#{bean.valorLitro}">
+					<f:convertNumber  minFractionDigits="2" />
+				</h:inputText>
+				
+				<h:outputLabel value="Litros:"/>
+				<h:inputText size="8" value="#{bean.litros}">
+					<f:convertNumber  minFractionDigits="0" />
+				</h:inputText>
+				
+				<h:outputLabel value="------"/>
+				<h:outputLabel value="------"/>
+				
+				<h:outputLabel value="Desconto:"/>
+				<h:inputText size="8" value="#{bean.desconto}"/>
+				
+				<h:outputLabel value="Valor litro c/ Desconto:"/>
+				<h:inputText size="8" value="#{bean.valorDesc}">
+					<f:convertNumber  minFractionDigits="2" />
+				</h:inputText>
+				
+				<h:outputLabel value="Total a Pagar:"/>
+				<h:inputText size="8" value="#{bean.valorPagar}">
+					<f:convertNumber  minFractionDigits="2" />
+				</h:inputText>
+			</h:panelGrid>
+		</fieldset>
+		</h:form>
+	</div>
+</h:body>
+</html>

@@ -1,0 +1,5 @@
+fieldset{
+	border-color: #808080;
+	margin: 20px;
+	width: 280px;
+}

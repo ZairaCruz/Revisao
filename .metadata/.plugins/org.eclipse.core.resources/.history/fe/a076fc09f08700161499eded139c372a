@@ -1,0 +1,86 @@
+package com.laboratorio.web;
+
+import java.io.Serializable;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+import javax.faces.bean.ManagedBean;
+
+@ManagedBean (name="bean")
+public class CombustivelBean implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	private Float litros;
+	private Integer desconto;
+	private Float valorLitro = (float) 2.5;
+	private Float valorPagar;
+	private Float valorDesc;
+	private String nomeCombustivel = "";
+	
+	
+	public Float getLitros() {
+		return litros;
+	}
+	public void setLitros(Float litros) {
+		this.litros = litros;
+	}
+	public Integer getDesconto() {
+		return desconto;
+	}
+	public void setDesconto(Integer desconto) {
+		this.desconto = desconto;
+	}
+	public Float getValorLitro() {
+		return valorLitro;
+	}
+	public void setValorLitro(Float valorLitro) {
+		this.valorLitro = valorLitro;
+	}
+	public Float getValorPagar() {
+		return valorPagar;
+	}
+	public void setValorPagar(Float valorPagar) {
+		this.valorPagar = valorPagar;
+	}
+	public Float getValorDesc() {
+		return valorDesc;
+	}
+	public void setValorDesc(Float valorDesc) {
+		this.valorDesc = valorDesc;
+	}
+	public String getNomeCombustivel() {
+		return nomeCombustivel;
+	}
+	public void setNomeCombustivel(String nomeCombustivel) {
+		this.nomeCombustivel = nomeCombustivel;
+	}
+	////////////necesários para o radio
+	public enum Tipo{Alcool, Gasolina};
+	private Tipo combustivel = Tipo.Alcool;
+	
+	public static void setTipoItens(Map<String, Tipo> tipoItens){
+		CombustivelBean.tipoItens = tipoItens;
+	}
+	public Map<String, Tipo> getTipoItens(){
+		return tipoItens;
+	}
+	private static Map<String, Tipo> tipoItens;
+		static{
+		tipoItens = new LinkedHashMap<String, Tipo>();
+		tipoItens.put("Alcool", Tipo.Alcool);
+		tipoItens.put("Gasolina", Tipo.Gasolina);
+	};
+	
+	public Tipo getCombustivel() {
+		return combustivel;
+	}
+	public void setCombustivel(Tipo combustivel) {
+		this.combustivel = combustivel;
+	}
+	///////////////////////////////////////////
+	
+	public String calcular(){
+		
+		return null;
+	}
+}

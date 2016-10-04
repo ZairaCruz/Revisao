@@ -1,0 +1,5 @@
+body{
+	background: #ff80ff;
+	font-family: Arial;
+	color: red;
+}

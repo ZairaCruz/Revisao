@@ -1,0 +1,30 @@
+package com.laboratorio.web;
+
+import java.io.Serializable;
+import java.util.List;
+
+import javax.faces.bean.ManagedBean;
+
+import com.laboratorio.model.Aluno;
+@ManagedBean (name="bAluno")
+public class BeanAluno implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+
+	public String actionUpdate(){
+		return "index";
+	}
+	public String actionInsert(){
+		return "index";
+	}
+	public String actionDelete(){
+		return "index";
+	}
+	public String actionSelectMatricula(){
+		return null;
+	}
+	public List<Aluno> getListagemAlunos(){
+		List<Aluno> lsAlunos = null;
+		return lsAlunos;
+	}
+}

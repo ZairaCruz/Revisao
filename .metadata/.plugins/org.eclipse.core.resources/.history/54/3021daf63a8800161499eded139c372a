@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>LabWeb 5</title>
+</h:head>
+
+<h:body>
+	<h:form id="Formulário">
+		<h:messages errorClass="errors" layout="list"/>
+		<h:panelGrid>
+			<f:facet name="header">
+			<h:outputLabel value="Cadastro de Produtos"/>
+			</f:facet>
+			
+			<h:outputLabel value="Descrição: "/>
+			<h:inputText value="#{beanProduto.produto.descricao}" id="Descrição"/>
+			<h:outputLabel value="Tipo: "/>
+			<h:inputText value="#{beanProduto.produto.tipo}" id="Tipo"/>
+		</h:panelGrid>
+		<h:commandButton value="Gravar Produto"
+			action="#{beanProduto.actionIncluir}"/>
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,21 @@
+package com.laboratorio.web;
+
+import java.io.Serializable;
+
+import javax.faces.bean.ManagedBean;
+
+@ManagedBean (name="bean")
+public class CombustivelBean implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	public enum Tipo{Alcool, Gasolina};
+	private Tipo combustivel;
+	
+	public Tipo getCombustivel() {
+		return combustivel;
+	}
+	public void setCombustivel(Tipo combustivel) {
+		this.combustivel = combustivel;
+	}
+	
+}

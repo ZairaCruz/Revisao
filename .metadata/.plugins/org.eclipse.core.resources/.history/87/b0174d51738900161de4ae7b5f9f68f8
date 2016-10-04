@@ -1,0 +1,45 @@
+package com.laboratorio.web;
+
+import java.io.Serializable;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.List;
+
+import javax.faces.bean.ManagedBean;
+
+import com.laboratorio.model.Aluno;
+@ManagedBean (name="bAluno")
+public class BeanAluno implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+
+	public String actionUpdate(){
+		Connection con = null;
+		PreparedStatement psUp = null;
+		String sql = "update aluno set nome = ?, idade = ?, sexo = ?, "
+				+ "peso = ?, altura = ? where matricula = ?";
+		
+		try{
+			con = ConnectionFactory
+			
+		}catch(Exception e){
+			System.err.println("---------------------");
+			System.err.println("Erro na atualização");
+			e.printStackTrace();
+		}
+		return "index";
+	}
+	public String actionInsert(){
+		return "index";
+	}
+	public String actionDelete(){
+		return "index";
+	}
+	public String actionSelectMatricula(){
+		return null;
+	}
+	public List<Aluno> getListagemAlunos(){
+		List<Aluno> lsAlunos = null;
+		return lsAlunos;
+	}
+}

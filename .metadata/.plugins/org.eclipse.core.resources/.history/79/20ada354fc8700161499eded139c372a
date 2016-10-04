@@ -1,0 +1,13 @@
+fieldset{
+	border-color: #808080;
+	margin: 20px;
+	position: center;
+	width: 273px;
+	background-color: rgba(255,255,255,.8);
+}
+#field{
+	border-color: #0000ff;
+	margin: 20px;
+	width: 250px;
+	position: center;
+}

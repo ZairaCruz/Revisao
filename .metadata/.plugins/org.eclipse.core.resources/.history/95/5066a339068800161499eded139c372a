@@ -1,0 +1,62 @@
+package com.laboratorio;
+
+import java.io.Serializable;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+import javax.faces.bean.ManagedBean;
+
+@ManagedBean (name="bean")
+public class ImcBean implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	private String nome;
+	private Float peso;
+	private Float altura;
+	
+	public enum Sexo{Masculino, Feminino};
+	private Sexo sexo = Sexo.Masculino;
+	
+	public static void setTipoItens(Map<String, Sexo> itens){
+		ImcBean.itens = itens;
+	}
+	public Map<String, Sexo> getItens(){
+		return itens;
+	}
+	private static Map<String, Sexo> itens;
+		static{
+		itens = new LinkedHashMap<String, Sexo>();
+		itens.put("Masculono", Sexo.Masculino);
+		itens.put("Feminino", Sexo.Feminino);
+	}
+		public String getNome() {
+			return nome;
+		}
+		public void setNome(String nome) {
+			this.nome = nome;
+		}
+		public Float getPeso() {
+			return peso;
+		}
+		public void setPeso(Float peso) {
+			this.peso = peso;
+		}
+		public Float getAltura() {
+			return altura;
+		}
+		public void setAltura(Float altura) {
+			this.altura = altura;
+		}
+		public Sexo getSexo() {
+			return sexo;
+		}
+		public void setSexo(Sexo sexo) {
+			this.sexo = sexo;
+		}
+		public static void setItens(Map<String, Sexo> itens) {
+			ImcBean.itens = itens;
+		};
+	
+	
+	 
+}

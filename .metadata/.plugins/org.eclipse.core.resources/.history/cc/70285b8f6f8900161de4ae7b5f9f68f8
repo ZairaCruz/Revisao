@@ -1,0 +1,10 @@
+package com.laboratorio.web;
+
+import java.io.Serializable;
+
+import javax.faces.bean.ManagedBean;
+@ManagedBean (name="bAluno")
+public class BeanAluno implements Serializable{
+
+	
+}

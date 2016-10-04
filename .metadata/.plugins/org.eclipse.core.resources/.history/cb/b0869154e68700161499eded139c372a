@@ -1,0 +1,6 @@
+.body{
+	background: #ff80ff;
+	font-family: arial;
+	color: #800080;
+	font-size: 20px;
+}

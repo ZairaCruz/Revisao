@@ -1,0 +1,37 @@
+package com.laboratorio.web;
+
+import java.io.Serializable;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+import javax.faces.bean.ManagedBean;
+
+@ManagedBean (name="bean")
+public class CombustivelBean implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	
+	public enum Tipo{Alcool, Gasolina};
+	private Tipo combustivel;
+	
+	public Tipo getCombustivel() {
+		return combustivel;
+	}
+	public void setCombustivel(Tipo combustivel) {
+		this.combustivel = combustivel;
+	}
+	
+	public static void setTipoItens(Map<String, Tipo> tipoItens){
+		CombustivelBean.tipoItens = tipoItens;
+	}
+	public Map<String, Tipo> getTipoItens(){
+		return tipoItens;
+	}
+	private static Map<String, Tipo> tipoItens;
+		static{
+		tipoItens = new LinkedHashMap<String, Tipo>();
+		tipoItens.put("Alcool", Tipo.Alcool);
+		tipoItens.put("Gasolina", Tipo.Gasolina);
+	};
+	
+}

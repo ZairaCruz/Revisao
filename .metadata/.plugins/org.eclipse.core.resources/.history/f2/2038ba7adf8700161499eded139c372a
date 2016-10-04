@@ -1,0 +1,14 @@
+package com.laboratorio;
+
+import java.io.Serializable;
+
+import javax.faces.bean.ManagedBean;
+
+@ManagedBean (name="bean")
+public class AppGameBean implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	private boolean primeira;
+	private boolean segunda;
+	
+}

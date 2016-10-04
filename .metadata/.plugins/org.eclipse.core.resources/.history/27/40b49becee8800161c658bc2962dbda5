@@ -1,0 +1,21 @@
+.orders{
+	border: thin solid black;
+}
+.ordersHeader{
+	text-align: center;
+	font-style: italic;
+	color: Snow;
+	background: Teal;
+	background-color: red;
+}
+
+.firstColumn{
+	height: 25px;
+	text-align: center;
+	color: red;
+}
+.secondColumn{
+	height: 25px;
+	text-align: center;
+	color: blue;
+}

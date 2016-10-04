@@ -1,0 +1,6 @@
+.body{
+	background: #ff80ff;
+	font-family: arial;
+	color: red;
+	font-size: 3em;
+}

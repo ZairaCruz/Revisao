@@ -1,0 +1,42 @@
+.orders{
+	border: thin solid black;
+}
+.ordersHeader{
+	text-align: center;
+	font-style: italic;
+	color: Snow;
+	background: Teal;
+	background-color: red;
+}
+
+.firstColumn{
+	height: 25px;
+	text-align: center;
+	background: MediumTurquoise;
+
+}
+.secondColumn{
+	height: 25px;
+	text-align: center;
+	background: PowderBlue;
+}
+.terceiraColumn{
+	height: 25px;
+	text-align: center;
+	background: MediumTurquoise;
+}
+.quartaColumn{
+	height: 25px;
+	text-align: center;
+	background: PowderBlue;
+}
+.quintaColumn{
+	height: 25px;
+	text-align: center;
+	background: MediumTurquoise;
+}
+.sextaColumn{
+	height: 25px;
+	text-align: center;
+	background: PowderBlue;
+}

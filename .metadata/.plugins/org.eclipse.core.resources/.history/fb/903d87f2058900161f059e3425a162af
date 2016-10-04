@@ -1,0 +1,52 @@
+package com.laboratorio.web;
+
+import java.io.Serializable;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+
+import com.laboratorio.model.Aluno;
+import com.laboratorio.util.ConnectionFactory;
+
+@ManagedBean (name="bAluno")
+@RequestScoped
+public class BeanAluno implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+
+	public List<Aluno> getListagem(){
+		List<Aluno> lsAlunos = null;
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		String sql = "select * from aluno order by nome";
+		try{
+			con = ConnectionFactory.getConnection();
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			lsAlunos = new ArrayList<Aluno>();
+			
+			while(rs.next()){
+				Aluno aluno = new Aluno();
+				aluno.setMatricula(rs.getInt("matricula"));
+				aluno.setNome(rs.getString("nome"));
+				aluno.setIdade(rs.getInt("idade"));
+				aluno.setSexo(rs.getString("sexo"));
+				aluno.setPeso(rs.getFloat("peso"));
+				aluno.setAltura(rs.getFloat("altura"));
+				lsAlunos.add(aluno);				
+			}
+		}catch(Exception e){
+			System.err.println("------------------");
+			System.err.println("Erro no select");
+			e.printStackTrace();
+		}
+		return lsAlunos;
+	}
+	
+}

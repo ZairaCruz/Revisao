@@ -1,0 +1,12 @@
+fieldset{
+	border-color: #808080;
+	margin: 20px;
+	width: 250px;
+	position: center;
+}
+.field{
+	border-color: #0000ff;
+	margin: 20px;
+	width: 250px;
+	position: center;
+}

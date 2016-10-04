@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>AppCalculoCombustível</title>
+</h:head>
+
+<h:body>
+	<div align="center">
+		<h:form>
+		<fieldset>
+			<h:panelGrid columns="4">
+				<h:selectOneRadio value="#{bean.combustivel}">
+					<f:selectItems value="#{bean.tipoItens}"/>
+				</h:selectOneRadio>
+			
+				<h:outputLabel value="Litros"/>
+				<h:inputText size="5" value="#{bean.litros}"/>
+				<h:commandButton value="Calcular"/>
+			</h:panelGrid>
+		</fieldset>
+		
+		
+		</h:form>
+	</div>
+</h:body>
+</html>
